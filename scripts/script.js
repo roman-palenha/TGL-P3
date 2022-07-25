@@ -10,7 +10,7 @@ function add() {
     itemText.textContent = document.getElementById('getText').value;
     let removeBtn = document.createElement('button');
     removeBtn.onclick = function() { this.parentNode.remove(); };
-    removeBtn.textContent = 'Remove';
+    removeBtn.innerHTML = '<img src="imgs/remove.png" />'
     item.appendChild(itemText);
     item.appendChild(removeBtn);
     todoList.appendChild(item);
