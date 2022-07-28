@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="css/basestyle.css">
     <script src="scripts/script.js"></script>
   </head>
-  <body>
+  <body onload="showTasks()">
         <div class="todo-wrapper">
-            <div class="add-item">
+          <img class="kitty" src="imgs/kitty.png">
+            <div class="add-item">  
                 <input placeholder="Type a todo" type="text" id="getText">
                 <button class="add-item-btn" onclick="add()">Add</button>
             </div>

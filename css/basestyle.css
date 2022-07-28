@@ -5,6 +5,7 @@
 
 body{
     padding: 25px;
+    background-color: #e6b6c8;
 }
 
 .todo-wrapper{
@@ -12,6 +13,12 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items:center;
+}
+
+.kitty{
+    height: 75px;
+    width: 75px;
+    object-fit: contain;
 }
 
 .add-item input {
@@ -57,13 +64,18 @@ body{
 }
 
 .todo-list-item button {
+    color: #fff;
     border: 0;
-    background-color: transparent;
+    background-color: #ff0000;
+    border-radius: 5%;
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    font-size: 1em;
 }
 
 .todo-list-item button:active {
-   border-radius: 75%;
-   border: 1px solid #000;
+   border: 2px solid #000;
 }
 
 .todo-list-item img {
