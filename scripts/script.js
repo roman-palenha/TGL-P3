@@ -15,7 +15,6 @@ function markTask(textNode) {
 } 
 
 function showTasks() {
-    let todoList = document.getElementById('list'); 
     for(let key in localStorage) {
            if (!localStorage.hasOwnProperty(key) || localStorage.getItem(key) == undefined) {
                 continue;
@@ -26,7 +25,7 @@ function showTasks() {
 }
 
 function addDiv(todoText, isCompleted, date) {
-    if(document.getElementById('getText').value == '') {
+    if(todoText == '') {
         alert('Empty field!');
         return;
     }
@@ -47,14 +46,16 @@ function addDiv(todoText, isCompleted, date) {
     let editBtn = document.createElement('button');
     editBtn.onclick = function() { 
         var editedText = prompt("Enter new todo: ");
-        if(editedText != '' || editedText != null) {
+        if(editedText != null){
+            if(editedText == '') {
+                alert("Edit with no empty value");
+                return;
+            }
             this.parentNode.childNodes[0].textContent = editedText;
             let i = JSON.parse(localStorage.getItem(this.parentNode.id));
             i.text = editedText;
             localStorage.setItem(item.id, JSON.stringify({ id: item.id, text: editedText, 
                 completed: i.completed }));
-        } else {
-            alert("Enter not empty value");
         }
     };
     editBtn.id = 'editBtn';
